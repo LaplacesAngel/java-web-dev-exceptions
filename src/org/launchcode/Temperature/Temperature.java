@@ -13,7 +13,17 @@ public class Temperature {
         double absoluteZeroFahrenheit = -459.67;
 
         if (aFahrenheit < absoluteZeroFahrenheit) {
-            System.out.println("Value is below absolute zero");
+            //try catch block to handle the exception
+            //we must handle every exception that is thrown
+            //we want to try to throw the exception and if we catch the error
+            //print the stack trace
+
+            try {
+                throw new TemperatureException("That temp is too low boi!");
+            } catch (TemperatureException e) {
+                e.printStackTrace();
+            }
+
         }
 
         fahrenheit = aFahrenheit;
